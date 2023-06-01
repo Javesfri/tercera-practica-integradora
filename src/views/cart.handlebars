@@ -1,0 +1,14 @@
+<h1>CARRITO</h1>
+{{#each products}}
+  <div class="product">
+    <img src="{{this.thumbnail}}" alt="Product Image" />
+    <div class="product-info">
+      <h2 class="product-name">{{this.title}}</h2>
+      <p class="product-price">${{this.price}}</p>
+      <p class="product-quantity">Cantidad: {{this.quantity}}</p>
+</form>
+    </div>
+  </div>
+{{/each}}
+<form method="POST" action="http://localhost:8080/api/carts/{{cartId}}/purchase">
+<button type="submit">Pagar</button></form>

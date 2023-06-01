@@ -1,0 +1,26 @@
+{"level":"warn","message":"Alerta, se estan ejecutando demasiados ciclos"}
+{"level":"warn","message":"Alerta, se estan ejecutando demasiados ciclos"}
+{"level":"warn","message":"Alerta, se estan ejecutando demasiados ciclos"}
+{"level":"warn","message":"Alerta, se estan ejecutando demasiados ciclos"}
+[31mfatal[39m: Alerta, se estan ejecutando demasiados ciclos
+[31mfatal[39m: Alerta, se estan ejecutando demasiados ciclos
+[31mfatal[39m: Alerta, se estan ejecutando demasiados ciclos
+[31mfatal[39m: Alerta, se estan ejecutando demasiados ciclos
+[31mfatal[39m: Alerta, se estan ejecutando demasiados ciclos
+[31mfatal[39m: Alerta, se estan ejecutando demasiados ciclos
+[31mfatal[39m: Alerta, se estan ejecutando demasiados ciclos
+[31mfatal[39m: Alerta, se estan ejecutando demasiados ciclos
+[31mfatal[39m: Alerta, se estan ejecutando demasiados ciclos
+[31mfatal[39m: Test de mensaje de nivel FATAL
+[31mfatal[39m: Test de mensaje de nivel FATAL
+[31mfatal[39m: Test de mensaje de nivel FATAL
+{"level":"fatal","message":"Test de mensaje de nivel FATAL"}
+{"level":"fatal","message":"Test de mensaje de nivel FATAL"}
+{"level":"error","message":"Test de mensaje de nivel ERROR"}
+{"level":"fatal","message":"Test de mensaje de nivel FATAL"}
+{"level":"error","message":"Test de mensaje de nivel ERROR"}
+{"level":"fatal","message":"Test de mensaje de nivel FATAL"}
+{"level":"error","message":"Test de mensaje de nivel ERROR"}
+{"level":"fatal","message":"Test de mensaje de nivel FATAL"}
+{"level":"error","message":"Test de mensaje de nivel ERROR"}
+{"level":"error","message":"Contraseña Invalida"}

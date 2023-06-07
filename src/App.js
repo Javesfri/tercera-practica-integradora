@@ -5,6 +5,7 @@ import routerCart from "./routes/carts.routes.js";
 import routerUser from "./routes/user.routes.js";
 import routerLogger from './routes/logger.routes.js';
 import routerSession from "./routes/session.routes.js";
+import routerPassRecover from './routes/passrecover.routes.js';
 import { engine } from "express-handlebars";
 import * as path from "path";
 import { __dirname, __filename } from "./path.js";
@@ -17,6 +18,7 @@ import MongoStore from 'connect-mongo'
 import session from 'express-session'
 import routerMocking from './routes/mocking.routes.js';
 import { addLogger } from './utils/logger.js';
+import nodemailer from 'nodemailer'
 
 const app = express();
 const PORT = 8080;
@@ -31,7 +33,7 @@ const connectionMongoose = async () => {
     await mongoose.connect(process.env.URLMONGODB)
     console.log("DB is connected")
   } catch (error) {
-    console.log(error) 
+    console.log( "ERror: "+await error) 
   }
 };
 connectionMongoose()
@@ -80,5 +82,10 @@ app.use('/user/', routerUser)
 app.use('/api/session/', routerSession)
 app.use('/mockingproducts',routerMocking)
 app.use("/loggerTest",routerLogger)
+app.use("/passRecovery",routerPassRecover)
+
+app.get('/mail',async(req,res)=>{
+  
+})
 
 

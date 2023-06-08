@@ -36,6 +36,10 @@ if (mongoose.models["products"]) {
       type: String,
       required: true,
     },
+    owner:{
+      type:  Schema.Types.ObjectId,
+      default:"admin"
+    }
   });
   productSchema.plugin(mongoosePaginate);
   productModel = mongoose.model("products", productSchema);

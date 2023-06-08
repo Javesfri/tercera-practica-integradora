@@ -7,6 +7,7 @@ import {
   getAllProducts,
   getProductById,
 } from "../services/productService.js";
+import { isPremium } from "../utils/premiumUsers.js";
 
 export const getProductsPag = async (req, res) => {
   const mail =req.session.user.email;
@@ -56,7 +57,12 @@ export const productGetById = async (req, res) => {
 };
 
 export const addProduct = async (req, res) => {
+  let product=req.body
+  if(isPremium()){
+    product.owner=req.session.user.email;
+  }
   let newProduct = productAdd(req.body);
+  
   res.send(newProduct);
 };
 

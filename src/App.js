@@ -18,7 +18,7 @@ import MongoStore from 'connect-mongo'
 import session from 'express-session'
 import routerMocking from './routes/mocking.routes.js';
 import { addLogger } from './utils/logger.js';
-import nodemailer from 'nodemailer'
+import methodOverride from 'method-override'
 
 const app = express();
 const PORT = 8080;
@@ -72,6 +72,7 @@ initializePassport()
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(addLogger)
+app.use(methodOverride('_method'));
 
 //Routes
 app.use("/static", express.static(__dirname + "/public"));
@@ -83,9 +84,5 @@ app.use('/api/session/', routerSession)
 app.use('/mockingproducts',routerMocking)
 app.use("/loggerTest",routerLogger)
 app.use("/passRecovery",routerPassRecover)
-
-app.get('/mail',async(req,res)=>{
-  
-})
 
 

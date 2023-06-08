@@ -29,10 +29,12 @@ export const getSession = (req, res) => {
   export const roleVerification= (rol) =>{
     return async (req,res,next) =>{
       const role=req.session.user.rol
-      if(rol!=role ){
+      if(rol!=role || role ){
         return(res.status(401).send({error:" No posee los permisos necesarios para realizar la operacion"}))
       }
       next()
     }
     
   }
+
+ 

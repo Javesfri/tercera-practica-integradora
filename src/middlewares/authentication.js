@@ -29,10 +29,21 @@ export const getSession = (req, res) => {
   export const roleVerification= (rol) =>{
     return async (req,res,next) =>{
       const role=req.session.user.rol
-      if(rol!=role || role ){
+      if(rol!=role ){
         return(res.status(401).send({error:" No posee los permisos necesarios para realizar la operacion"}))
       }
       next()
+    }
+    
+  }
+
+  export const isAdminOrPremium=(req,res,next)=>{
+    const userRol = req.session.user.rol;
+    console.log(userRol)
+    if(userRol=="Premium"||userRol=="Admin"){
+      next()
+    }else{
+      return(res.status(401).send({error:" No posee los permisos necesarios para realizar la operacion"}))
     }
     
   }

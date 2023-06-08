@@ -22,7 +22,7 @@ export const getProductsPag = async (req, res) => {
   const total = [];
   products.map((prod) => {
     const newProd = { ...prod._doc };
-    const {_id, title, description, price, code, category, thumbnail, stock } = {
+    const {_id, title, description, price, code, category, thumbnail, stock,owner } = {
       ...newProd,
     };
     total.push({
@@ -35,6 +35,7 @@ export const getProductsPag = async (req, res) => {
       category: category,
       stock: stock,
       imagen: thumbnail,
+      owner: owner
     });
   });
   const pages = data.totalPages;
@@ -56,14 +57,16 @@ export const productGetById = async (req, res) => {
   res.send(product);
 };
 
-export const addProduct = async (req, res) => {
+export const addProduct = async (req, res,next) => {
   let product=req.body
-  if(isPremium()){
+  if(req.session.user.rol=="Premium"){
     product.owner=req.session.user.email;
   }
-  let newProduct = productAdd(req.body);
-  
-  res.send(newProduct);
+  let newProduct =await productAdd(req.body);
+  if(!newProduct){
+    req.logger.error("Error en carga de producto")
+  }
+  next();
 };
 
 export const deleteProduct = async (req, res) => {

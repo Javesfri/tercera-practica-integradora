@@ -25,16 +25,24 @@
             >${{this.price}}</p></div><div class="stock-container"><p
               class="stock-container"
             >Stock: {{this.stock}}</p></div></div>
-        <div class="add-cart-container"> <form action="http://localhost:8080/api/carts/{{this.idCart}}/products/{{this.id}}" method="post"><input type="submit" value="Agregar al Carrito"></form></div>
+            <h4>Owner: {{this.owner}}</h4>
+        <div class="add-cart-container">
+          <form
+            action="http://localhost:8080/api/carts/{{this.idCart}}/products/{{this.id}}"
+            method="post"
+          ><input type="submit" value="Agregar al Carrito" /></form></div>
       </div>
     {{/each}}
   </div>
   <div class="page-container">
     {{#each pages}}
-        <div class="page-button"><a class="page-link" href="http://localhost:8080/api/products?page={{this.page}}">{{this.page}}</a></div>
+      <div class="page-button"><a
+          class="page-link"
+          href="http://localhost:8080/api/products?page={{this.page}}"
+        >{{this.page}}</a></div>
     {{/each}}
   </div>
 
   <a href="http://localhost:8080/api/carts/{{cart}}">Ir Al Carrito</a>
-  <a href="http://localhost:8080/api/products/addProduct">Subir Producto</a>
+  <a href="http://localhost:8080/api/products/addproduct">Subir Producto</a>
 </div>

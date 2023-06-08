@@ -45,3 +45,4 @@
 {"level":"error","message":"Las Contraseñas no coinciden"}
 {"level":"error","message":"Error: No puede utilizar contraseñas antiguas"}
 {"level":"error","message":"Las Contraseñas no coinciden"}
+{"level":"error","message":"Usuario Existente"}

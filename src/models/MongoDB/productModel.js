@@ -37,8 +37,9 @@ if (mongoose.models["products"]) {
       required: true,
     },
     owner:{
-      type:  Schema.Types.ObjectId,
-      default:"admin"
+      type:  String,
+      default:"admin",
+      required:true
     }
   });
   productSchema.plugin(mongoosePaginate);
